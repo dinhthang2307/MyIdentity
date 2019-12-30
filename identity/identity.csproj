@@ -1,0 +1,1553 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AE212C3F-6ED3-4496-99C2-B5D428F33403}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>identity</RootNamespace>
+    <AssemblyName>identity</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.2.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.2.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.2.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.2.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.2.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ProductCategoriesController.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="DAL\MyContext.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912041655262_initial.cs" />
+    <Compile Include="Migrations\201912041655262_initial.Designer.cs">
+      <DependentUpon>201912041655262_initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912051514115_product.cs" />
+    <Compile Include="Migrations\201912051514115_product.Designer.cs">
+      <DependentUpon>201912051514115_product.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912141658058_addimage.cs" />
+    <Compile Include="Migrations\201912141658058_addimage.Designer.cs">
+      <DependentUpon>201912141658058_addimage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\ProductCategory.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\bootstrap.css" />
+    <Content Include="Content\css\etalage.css" />
+    <Content Include="Content\css\form.css" />
+    <Content Include="Content\css\style.css" />
+    <Content Include="Content\Font-Awesome-4.6.3\.gitignore" />
+    <Content Include="Content\Font-Awesome-4.6.3\css\font-awesome.css" />
+    <Content Include="Content\Font-Awesome-4.6.3\css\font-awesome.min.css" />
+    <Content Include="Content\Font-Awesome-4.6.3\HELP-US-OUT.txt" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\css\prettify.css" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\css\pygments.css" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\css\site.css" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\font-awesome\css\font-awesome-ie7.css" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\font-awesome\css\font-awesome-ie7.min.css" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\font-awesome\css\font-awesome.css" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\ico\favicon.ico" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\img\contribution-sample.png" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\img\fort_awesome.jpg" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\img\glyphicons-halflings-white.png" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\img\glyphicons-halflings.png" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\js\backbone.min.js" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\js\bootstrap-2.3.1.min.js" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\js\bootstrap-222.min.js" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\js\jquery-1.7.1.min.js" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\js\prettify.min.js" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\js\site.js" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\js\underscore.min.js" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\js\ZeroClipboard-1.1.7.min.js" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\js\ZeroClipboard-1.1.7.swf" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\cheatsheet\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\community\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\design.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\examples\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\get-started\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icons\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\adjust\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\adn\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\align-center\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\align-justify\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\align-left\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\align-right\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\ambulance\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\anchor\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\android\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\angle-down\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\angle-left\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\angle-right\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\angle-up\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\apple\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\archive\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\arrow-down\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\arrow-left\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\arrow-right\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\arrow-up\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\asterisk\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\backward\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\ban-circle\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\bar-chart\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\barcode\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\beaker\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\beer\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\bell-alt\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\bell\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\bitbucket-sign\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\bitbucket\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\bold\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\bolt\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\bookmark-empty\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\bookmark\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\book\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\briefcase\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\btc\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\bug\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\building\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\bullhorn\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\bullseye\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\calendar-empty\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\calendar\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\camera-retro\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\camera\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\caret-down\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\caret-left\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\caret-right\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\caret-up\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\certificate\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\check-empty\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\check-minus\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\check-sign\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\check\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\chevron-down\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\chevron-left\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\chevron-right\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\chevron-sign-down\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\chevron-sign-left\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\chevron-sign-right\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\chevron-sign-up\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\chevron-up\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\circle-arrow-down\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\circle-arrow-left\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\circle-arrow-right\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\circle-arrow-up\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\circle-blank\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\circle\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\cloud-download\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\cloud-upload\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\cloud\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\cny\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\code-fork\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\code\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\coffee\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\cogs\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\cog\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\collapse-alt\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\collapse-top\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\collapse\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\columns\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\comment-alt\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\comments-alt\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\comments\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\comment\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\compass\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\copy\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\credit-card\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\crop\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\css3\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\cut\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\dashboard\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\desktop\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\double-angle-down\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\double-angle-left\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\double-angle-right\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\double-angle-up\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\download-alt\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\download\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\dribbble\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\dropbox\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\edit-sign\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\edit\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\eject\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\ellipsis-horizontal\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\ellipsis-vertical\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\envelope-alt\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\envelope\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\eraser\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\eur\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\exchange\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\exclamation-sign\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\exclamation\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\expand-alt\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\expand\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\external-link-sign\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\external-link\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\eye-close\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\eye-open\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\facebook-sign\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\facebook\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\facetime-video\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\fast-backward\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\fast-forward\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\female\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\fighter-jet\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\file-alt\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\file-text-alt\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\file-text\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\file\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\film\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\filter\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\fire-extinguisher\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\fire\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\flag-alt\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\flag-checkered\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\flag\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\flickr\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\folder-close-alt\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\folder-close\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\folder-open-alt\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\folder-open\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\font\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\food\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\forward\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\foursquare\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\frown\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\fullscreen\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\gamepad\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\gbp\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\gift\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\github-alt\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\github-sign\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\github\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\gittip\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\glass\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\globe\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\google-plus-sign\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\google-plus\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\group\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\h-sign\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\hand-down\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\hand-left\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\hand-right\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\hand-up\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\hdd\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\headphones\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\heart-empty\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\heart\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\home\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\hospital\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\html5\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\inbox\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\indent-left\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\indent-right\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\info-sign\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\info\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\inr\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\instagram\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\italic\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\jpy\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\keyboard\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\key\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\krw\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\laptop\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\leaf\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\legal\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\lemon\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\level-down\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\level-up\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\lightbulb\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\linkedin-sign\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\linkedin\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\link\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\linux\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\list-alt\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\list-ol\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\list-ul\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\list\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\location-arrow\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\lock\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\long-arrow-down\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\long-arrow-left\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\long-arrow-right\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\long-arrow-up\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\magic\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\magnet\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\mail-reply-all\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\male\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\map-marker\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\maxcdn\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\medkit\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\meh\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\microphone-off\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\microphone\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\minus-sign-alt\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\minus-sign\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\minus\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\mobile-phone\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\money\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\moon\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\move\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\music\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\off\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\ok-circle\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\ok-sign\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\ok\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\paper-clip\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\paste\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\pause\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\pencil\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\phone-sign\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\phone\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\picture\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\pinterest-sign\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\pinterest\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\plane\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\play-circle\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\play-sign\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\play\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\plus-sign-alt\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\plus-sign\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\plus\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\print\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\pushpin\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\puzzle-piece\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\qrcode\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\question-sign\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\question\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\quote-left\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\quote-right\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\random\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\refresh\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\remove-circle\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\remove-sign\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\remove\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\renren\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\reorder\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\repeat\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\reply-all\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\reply\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\resize-full\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\resize-horizontal\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\resize-small\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\resize-vertical\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\retweet\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\road\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\rocket\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\rss-sign\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\rss\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\save\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\screenshot\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\search\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\share-alt\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\share-sign\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\share\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\shield\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\shopping-cart\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\sign-blank\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\signal\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\signin\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\signout\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\sitemap\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\skype\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\smile\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\sort-by-alphabet-alt\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\sort-by-alphabet\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\sort-by-attributes-alt\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\sort-by-attributes\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\sort-by-order-alt\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\sort-by-order\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\sort-down\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\sort-up\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\sort\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\spinner\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\stackexchange\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\star-empty\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\star-half-empty\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\star-half\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\star\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\step-backward\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\step-forward\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\stethoscope\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\stop\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\strikethrough\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\subscript\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\suitcase\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\sun\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\superscript\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\tablet\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\table\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\tags\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\tag\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\tasks\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\terminal\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\text-height\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\text-width\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\th-large\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\th-list\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\thumbs-down-alt\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\thumbs-down\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\thumbs-up-alt\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\thumbs-up\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\th\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\ticket\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\time\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\tint\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\trash\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\trello\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\trophy\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\truck\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\tumblr-sign\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\tumblr\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\twitter-sign\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\twitter\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\umbrella\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\underline\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\undo\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\unlink\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\unlock-alt\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\unlock\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\upload-alt\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\upload\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\usd\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\user-md\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\user\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\vk\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\volume-down\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\volume-off\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\volume-up\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\warning-sign\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\weibo\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\windows\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\wrench\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\xing-sign\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\xing\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\youtube-play\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\youtube-sign\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\youtube\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\zoom-in\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icon\zoom-out\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\license\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\test\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\whats-new\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\accessibility.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\css\prettify.css" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\css\pygments.css" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\font-awesome\HELP-US-OUT.txt" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\ico\favicon.ico" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\img\algolia.png" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\img\logo-themeisle.png" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\img\logo-wpbeginner.png" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\js\html5shiv.js" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\js\prettify.min.js" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\js\respond.min.js" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\js\search.js" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\js\site.js" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\js\ZeroClipboard-1.1.7.min.js" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\js\ZeroClipboard-1.1.7.swf" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\cdn\error.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\cdn\success.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\cheatsheet.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\community.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\design.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\examples.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\get-started.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\icons.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\license.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\store.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\survey.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\test\2.3.2.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\test\all.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\test\glyphicons.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\test\height\4.4.0.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\test\height\4.5.0.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\test\height\current.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\test\index.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\thanks.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\whats-new.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_includes\accessibility\accessibility-facdn.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_includes\accessibility\accessibility-manual.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_includes\accessibility\background.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_includes\accessibility\cta-cdn-ally.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_includes\accessibility\other.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_includes\ads\fusion.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_includes\brand-adblock-warning.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_includes\brand-license.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_includes\code\license.css" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_includes\community\getting-support.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_includes\community\project-milestones.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_includes\community\reporting-bugs.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_includes\community\requesting-new-icons.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_includes\community\submitting-pull-requests.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_includes\examples\accessible.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_includes\examples\animated.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_includes\examples\basic.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_includes\examples\bootstrap.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_includes\examples\bordered-pulled.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_includes\examples\custom.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_includes\examples\fixed-width.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_includes\examples\larger.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_includes\examples\list.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_includes\examples\rotated-flipped.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_includes\examples\stacked.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_includes\footer.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_includes\icons\accessibility.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_includes\icons\brand.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_includes\icons\chart.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_includes\icons\currency.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_includes\icons\directional.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_includes\icons\file-type.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_includes\icons\form-control.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_includes\icons\gender.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_includes\icons\hand.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_includes\icons\medical.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_includes\icons\new.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_includes\icons\payment.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_includes\icons\spinner.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_includes\icons\text-editor.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_includes\icons\transportation.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_includes\icons\video-player.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_includes\icons\web-application.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_includes\jumbotron-carousel.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_includes\jumbotron.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_includes\modals\download.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_includes\navbar.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_includes\new-features.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_includes\new-naming.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_includes\new-upgrading.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_includes\products\camera-retro-tee.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_includes\products\classics-tee.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_includes\products\cta-suggestions.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_includes\products\fa-ther-tee.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_includes\products\green-logo-tee.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_includes\products\old-skool-tee.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_includes\products\rock-paper-scissors-lizard-spock-tee.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_includes\products\space-shuttle-tee.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_includes\products\white-logo-tee.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_includes\stripe-ad.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_includes\stripe-social.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_includes\tell-me-thanks.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_includes\tests\rotated-flipped-inside-anchor.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_includes\tests\rotated-flipped-inside-btn.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_includes\tests\rotated-flipped.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_includes\tests\stacked-inside-anchor.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_includes\tests\stacked-with-text.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_includes\tests\stacked.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_includes\thanks-to.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_includes\why.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_layouts\base.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_layouts\icon.html" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_layouts\survey.html" />
+    <Content Include="Content\images\a-star.png" />
+    <Content Include="Content\images\arrow1.png" />
+    <Content Include="Content\images\arrow2.png" />
+    <Content Include="Content\images\avatar.png" />
+    <Content Include="Content\images\b-arrow.png" />
+    <Content Include="Content\images\ba.jpg" />
+    <Content Include="Content\images\baa.jpg" />
+    <Content Include="Content\images\bag.jpg" />
+    <Content Include="Content\images\bag1.jpg" />
+    <Content Include="Content\images\bo.jpg" />
+    <Content Include="Content\images\bott.jpg" />
+    <Content Include="Content\images\bottle.jpg" />
+    <Content Include="Content\images\ch.jpg" />
+    <Content Include="Content\images\facebook.png" />
+    <Content Include="Content\images\gpluse.png" />
+    <Content Include="Content\images\img-sprite.png" />
+    <Content Include="Content\images\label_new.png" />
+    <Content Include="Content\images\logo.png" />
+    <Content Include="Content\images\pi.jpg" />
+    <Content Include="Content\images\pi1.jpg" />
+    <Content Include="Content\images\pi2.jpg" />
+    <Content Include="Content\images\pi3.jpg" />
+    <Content Include="Content\images\pi4.jpg" />
+    <Content Include="Content\images\pic.jpg" />
+    <Content Include="Content\images\pic1.jpg" />
+    <Content Include="Content\images\pic10.jpg" />
+    <Content Include="Content\images\pic11.jpg" />
+    <Content Include="Content\images\pic12.jpg" />
+    <Content Include="Content\images\pic13.jpg" />
+    <Content Include="Content\images\pic2.jpg" />
+    <Content Include="Content\images\pic3.jpg" />
+    <Content Include="Content\images\pic4.jpg" />
+    <Content Include="Content\images\pic5.jpg" />
+    <Content Include="Content\images\pic6.jpg" />
+    <Content Include="Content\images\pic7.jpg" />
+    <Content Include="Content\images\pic8.jpg" />
+    <Content Include="Content\images\review.png" />
+    <Content Include="Content\images\rss.png" />
+    <Content Include="Content\images\s1.jpg" />
+    <Content Include="Content\images\s2.jpg" />
+    <Content Include="Content\images\s3.jpg" />
+    <Content Include="Content\images\s4.jpg" />
+    <Content Include="Content\images\sh.jpg" />
+    <Content Include="Content\images\si1.jpg" />
+    <Content Include="Content\images\si2.jpg" />
+    <Content Include="Content\images\si3.jpg" />
+    <Content Include="Content\images\si4.jpg" />
+    <Content Include="Content\images\star.png" />
+    <Content Include="Content\images\tick1.png" />
+    <Content Include="Content\images\twitter.png" />
+    <Content Include="Content\images\wa.jpg" />
+    <Content Include="Content\images\wat.jpg" />
+    <Content Include="Content\images\zoom.png" />
+    <Content Include="Content\js\jquery.etalage.min.js" />
+    <Content Include="Content\js\jquery.flexisel.js" />
+    <Content Include="Content\js\jquery.min.js" />
+    <Content Include="Content\js\jquery.wmuSlider.js" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Font-Awesome-4.6.3\.npmignore" />
+    <Content Include="Content\Font-Awesome-4.6.3\bower.json" />
+    <Content Include="Content\Font-Awesome-4.6.3\component.json" />
+    <Content Include="Content\Font-Awesome-4.6.3\composer.json" />
+    <Content Include="Content\Font-Awesome-4.6.3\CONTRIBUTING.md" />
+    <Content Include="Content\Font-Awesome-4.6.3\css\font-awesome.css.map" />
+    <Content Include="Content\Font-Awesome-4.6.3\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\Font-Awesome-4.6.3\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\Font-Awesome-4.6.3\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\Font-Awesome-4.6.3\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\Font-Awesome-4.6.3\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\Font-Awesome-4.6.3\fonts\FontAwesome.otf" />
+    <Content Include="Content\Font-Awesome-4.6.3\Gemfile" />
+    <Content Include="Content\Font-Awesome-4.6.3\Gemfile.lock" />
+    <Content Include="Content\Font-Awesome-4.6.3\less\animated.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\less\bordered-pulled.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\less\core.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\less\fixed-width.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\less\font-awesome.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\less\icons.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\less\larger.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\less\list.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\less\mixins.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\less\path.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\less\rotated-flipped.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\less\screen-reader.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\less\stacked.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\less\variables.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\package.json" />
+    <Content Include="Content\Font-Awesome-4.6.3\README.md" />
+    <Content Include="Content\Font-Awesome-4.6.3\scss\font-awesome.scss" />
+    <Content Include="Content\Font-Awesome-4.6.3\scss\_animated.scss" />
+    <Content Include="Content\Font-Awesome-4.6.3\scss\_bordered-pulled.scss" />
+    <Content Include="Content\Font-Awesome-4.6.3\scss\_core.scss" />
+    <Content Include="Content\Font-Awesome-4.6.3\scss\_fixed-width.scss" />
+    <Content Include="Content\Font-Awesome-4.6.3\scss\_icons.scss" />
+    <Content Include="Content\Font-Awesome-4.6.3\scss\_larger.scss" />
+    <Content Include="Content\Font-Awesome-4.6.3\scss\_list.scss" />
+    <Content Include="Content\Font-Awesome-4.6.3\scss\_mixins.scss" />
+    <Content Include="Content\Font-Awesome-4.6.3\scss\_path.scss" />
+    <Content Include="Content\Font-Awesome-4.6.3\scss\_rotated-flipped.scss" />
+    <Content Include="Content\Font-Awesome-4.6.3\scss\_screen-reader.scss" />
+    <Content Include="Content\Font-Awesome-4.6.3\scss\_stacked.scss" />
+    <Content Include="Content\Font-Awesome-4.6.3\scss\_variables.scss" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\font-awesome.zip" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\font-awesome\font\fontawesome-webfont.eot" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\font-awesome\font\fontawesome-webfont.svg" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\font-awesome\font\fontawesome-webfont.ttf" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\font-awesome\font\fontawesome-webfont.woff" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\font-awesome\font\FontAwesome.otf" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\font-awesome\less\bootstrap.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\font-awesome\less\core.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\font-awesome\less\extras.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\font-awesome\less\font-awesome-ie7.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\font-awesome\less\font-awesome.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\font-awesome\less\icons.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\font-awesome\less\mixins.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\font-awesome\less\path.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\font-awesome\less\variables.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\font-awesome\scss\font-awesome-ie7.scss" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\font-awesome\scss\font-awesome.scss" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\font-awesome\scss\_bootstrap.scss" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\font-awesome\scss\_core.scss" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\font-awesome\scss\_extras.scss" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\font-awesome\scss\_icons.scss" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\font-awesome\scss\_mixins.scss" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\font-awesome\scss\_path.scss" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\font-awesome\scss\_variables.scss" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\img\icon-flag.pdf" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\less\bootstrap-2.3.2\accordion.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\less\bootstrap-2.3.2\alerts.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\less\bootstrap-2.3.2\bootstrap.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\less\bootstrap-2.3.2\breadcrumbs.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\less\bootstrap-2.3.2\button-groups.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\less\bootstrap-2.3.2\buttons.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\less\bootstrap-2.3.2\carousel.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\less\bootstrap-2.3.2\close.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\less\bootstrap-2.3.2\code.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\less\bootstrap-2.3.2\component-animations.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\less\bootstrap-2.3.2\dropdowns.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\less\bootstrap-2.3.2\forms.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\less\bootstrap-2.3.2\grid.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\less\bootstrap-2.3.2\hero-unit.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\less\bootstrap-2.3.2\labels-badges.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\less\bootstrap-2.3.2\layouts.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\less\bootstrap-2.3.2\media.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\less\bootstrap-2.3.2\mixins.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\less\bootstrap-2.3.2\modals.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\less\bootstrap-2.3.2\navbar.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\less\bootstrap-2.3.2\navs.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\less\bootstrap-2.3.2\pager.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\less\bootstrap-2.3.2\pagination.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\less\bootstrap-2.3.2\popovers.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\less\bootstrap-2.3.2\progress-bars.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\less\bootstrap-2.3.2\reset.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\less\bootstrap-2.3.2\responsive-1200px-min.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\less\bootstrap-2.3.2\responsive-767px-max.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\less\bootstrap-2.3.2\responsive-768px-979px.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\less\bootstrap-2.3.2\responsive-navbar.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\less\bootstrap-2.3.2\responsive-utilities.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\less\bootstrap-2.3.2\responsive.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\less\bootstrap-2.3.2\scaffolding.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\less\bootstrap-2.3.2\sprites.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\less\bootstrap-2.3.2\tables.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\less\bootstrap-2.3.2\thumbnails.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\less\bootstrap-2.3.2\tooltip.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\less\bootstrap-2.3.2\type.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\less\bootstrap-2.3.2\utilities.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\less\bootstrap-2.3.2\variables.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\less\bootstrap-2.3.2\wells.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\less\lazy.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\less\mixins.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\less\responsive-1200px-min.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\less\responsive-767px-max.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\less\responsive-768px-979px.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\less\responsive-navbar.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\less\responsive.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\less\site.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\less\sticky-footer.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\assets\less\variables.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\CNAME" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\icons.yml" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\3.2.1\Makefile" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\font-awesome\less\animated.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\font-awesome\less\bordered-pulled.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\font-awesome\less\core.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\font-awesome\less\fixed-width.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\font-awesome\less\font-awesome.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\font-awesome\less\icons.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\font-awesome\less\larger.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\font-awesome\less\list.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\font-awesome\less\mixins.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\font-awesome\less\path.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\font-awesome\less\rotated-flipped.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\font-awesome\less\screen-reader.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\font-awesome\less\stacked.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\font-awesome\less\variables.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\font-awesome\scss\font-awesome.scss" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\font-awesome\scss\_animated.scss" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\font-awesome\scss\_core.scss" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\font-awesome\scss\_icons.scss" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\font-awesome\scss\_larger.scss" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\font-awesome\scss\_list.scss" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\font-awesome\scss\_mixins.scss" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\font-awesome\scss\_path.scss" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\font-awesome\scss\_screen-reader.scss" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\font-awesome\scss\_stacked.scss" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\font-awesome\scss\_variables.scss" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\bootstrap-3.3.5\.csscomb.json" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\bootstrap-3.3.5\.csslintrc" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\bootstrap-3.3.5\alerts.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\bootstrap-3.3.5\badges.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\bootstrap-3.3.5\bootstrap.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\bootstrap-3.3.5\breadcrumbs.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\bootstrap-3.3.5\button-groups.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\bootstrap-3.3.5\buttons.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\bootstrap-3.3.5\carousel.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\bootstrap-3.3.5\close.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\bootstrap-3.3.5\code.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\bootstrap-3.3.5\component-animations.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\bootstrap-3.3.5\dropdowns.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\bootstrap-3.3.5\forms.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\bootstrap-3.3.5\glyphicons.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\bootstrap-3.3.5\grid.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\bootstrap-3.3.5\input-groups.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\bootstrap-3.3.5\jumbotron.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\bootstrap-3.3.5\labels.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\bootstrap-3.3.5\list-group.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\bootstrap-3.3.5\media.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\bootstrap-3.3.5\mixins.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\bootstrap-3.3.5\mixins\alerts.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\bootstrap-3.3.5\mixins\background-variant.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\bootstrap-3.3.5\mixins\border-radius.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\bootstrap-3.3.5\mixins\buttons.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\bootstrap-3.3.5\mixins\center-block.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\bootstrap-3.3.5\mixins\clearfix.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\bootstrap-3.3.5\mixins\forms.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\bootstrap-3.3.5\mixins\gradients.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\bootstrap-3.3.5\mixins\grid-framework.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\bootstrap-3.3.5\mixins\grid.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\bootstrap-3.3.5\mixins\hide-text.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\bootstrap-3.3.5\mixins\image.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\bootstrap-3.3.5\mixins\labels.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\bootstrap-3.3.5\mixins\list-group.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\bootstrap-3.3.5\mixins\nav-divider.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\bootstrap-3.3.5\mixins\nav-vertical-align.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\bootstrap-3.3.5\mixins\opacity.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\bootstrap-3.3.5\mixins\pagination.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\bootstrap-3.3.5\mixins\panels.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\bootstrap-3.3.5\mixins\progress-bar.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\bootstrap-3.3.5\mixins\reset-filter.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\bootstrap-3.3.5\mixins\reset-text.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\bootstrap-3.3.5\mixins\resize.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\bootstrap-3.3.5\mixins\responsive-visibility.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\bootstrap-3.3.5\mixins\size.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\bootstrap-3.3.5\mixins\tab-focus.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\bootstrap-3.3.5\mixins\table-row.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\bootstrap-3.3.5\mixins\text-emphasis.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\bootstrap-3.3.5\mixins\text-overflow.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\bootstrap-3.3.5\mixins\vendor-prefixes.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\bootstrap-3.3.5\modals.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\bootstrap-3.3.5\navbar.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\bootstrap-3.3.5\navs.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\bootstrap-3.3.5\normalize.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\bootstrap-3.3.5\pager.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\bootstrap-3.3.5\pagination.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\bootstrap-3.3.5\panels.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\bootstrap-3.3.5\popovers.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\bootstrap-3.3.5\print.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\bootstrap-3.3.5\progress-bars.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\bootstrap-3.3.5\responsive-embed.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\bootstrap-3.3.5\responsive-utilities.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\bootstrap-3.3.5\scaffolding.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\bootstrap-3.3.5\tables.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\bootstrap-3.3.5\theme.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\bootstrap-3.3.5\thumbnails.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\bootstrap-3.3.5\tooltip.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\bootstrap-3.3.5\type.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\bootstrap-3.3.5\utilities.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\bootstrap-3.3.5\variables.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\bootstrap-3.3.5\wells.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\gandy-grid\grid.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\gandy-grid\mixins.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\site.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\site\algolia.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\site\banner-ad.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\site\bootstrap\alerts.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\site\bootstrap\buttons.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\site\bootstrap\jumbotron.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\site\bootstrap\labels.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\site\bootstrap\modals.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\site\bootstrap\navbar.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\site\bootstrap\panels.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\site\bootstrap\tooltip.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\site\bootstrap\type.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\site\bootstrap\variables.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\site\bootstrap\wells.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\site\bsap-ad.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\site\example-rating.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\site\feature-list.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\site\fontawesome-icon-list.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\site\footer.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\site\fusion-ad.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\site\jumbotron-carousel.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\site\layout.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\site\lazy.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\site\responsive\screen-lg.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\site\responsive\screen-md.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\site\responsive\screen-sm-up.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\site\responsive\screen-sm.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\site\responsive\screen-xs.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\site\search.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\site\social-buttons.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\site\store.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\site\stripe-ad.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\site\sumome.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\site\textured-bg.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\assets\less\site\views.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\CNAME" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\icons.yml" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\Makefile" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\README.md-nobuild" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_includes\code\core.less" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_includes\code\core.scss" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_plugins\flatten_icon_filters.rb" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_plugins\icon_page_generator.rb" />
+    <Content Include="Content\Font-Awesome-4.6.3\src\_plugins\site.rb" />
+    <Content Include="Content\Font-Awesome-4.6.3\_config.yml" />
+    <Content Include="Content\images\Thumbs.db" />
+    <Content Include="Scripts\ckeditor\adapters\jquery.js" />
+    <Content Include="Scripts\ckeditor\CHANGES.html" />
+    <Content Include="Scripts\ckeditor\ckeditor.asp" />
+    <Content Include="Scripts\ckeditor\ckeditor.js" />
+    <Content Include="Scripts\ckeditor\ckeditor.pack" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\ckeditor\ckeditor.php" />
+    <Content Include="Scripts\ckeditor\ckeditor_basic.js" />
+    <Content Include="Scripts\ckeditor\ckeditor_basic_source.js" />
+    <Content Include="Scripts\ckeditor\ckeditor_php4.php" />
+    <Content Include="Scripts\ckeditor\ckeditor_php5.php" />
+    <Content Include="Scripts\ckeditor\ckeditor_source.js" />
+    <Content Include="Scripts\ckeditor\config.js" />
+    <Content Include="Scripts\ckeditor\contents.css" />
+    <Content Include="Scripts\ckeditor\images\spacer.gif" />
+    <Content Include="Scripts\ckeditor\INSTALL.html" />
+    <Content Include="Scripts\ckeditor\lang\af.js" />
+    <Content Include="Scripts\ckeditor\lang\ar.js" />
+    <Content Include="Scripts\ckeditor\lang\bg.js" />
+    <Content Include="Scripts\ckeditor\lang\bn.js" />
+    <Content Include="Scripts\ckeditor\lang\bs.js" />
+    <Content Include="Scripts\ckeditor\lang\ca.js" />
+    <Content Include="Scripts\ckeditor\lang\cs.js" />
+    <Content Include="Scripts\ckeditor\lang\cy.js" />
+    <Content Include="Scripts\ckeditor\lang\da.js" />
+    <Content Include="Scripts\ckeditor\lang\de.js" />
+    <Content Include="Scripts\ckeditor\lang\el.js" />
+    <Content Include="Scripts\ckeditor\lang\en-au.js" />
+    <Content Include="Scripts\ckeditor\lang\en-ca.js" />
+    <Content Include="Scripts\ckeditor\lang\en-gb.js" />
+    <Content Include="Scripts\ckeditor\lang\en.js" />
+    <Content Include="Scripts\ckeditor\lang\eo.js" />
+    <Content Include="Scripts\ckeditor\lang\es.js" />
+    <Content Include="Scripts\ckeditor\lang\et.js" />
+    <Content Include="Scripts\ckeditor\lang\eu.js" />
+    <Content Include="Scripts\ckeditor\lang\fa.js" />
+    <Content Include="Scripts\ckeditor\lang\fi.js" />
+    <Content Include="Scripts\ckeditor\lang\fo.js" />
+    <Content Include="Scripts\ckeditor\lang\fr-ca.js" />
+    <Content Include="Scripts\ckeditor\lang\fr.js" />
+    <Content Include="Scripts\ckeditor\lang\gl.js" />
+    <Content Include="Scripts\ckeditor\lang\gu.js" />
+    <Content Include="Scripts\ckeditor\lang\he.js" />
+    <Content Include="Scripts\ckeditor\lang\hi.js" />
+    <Content Include="Scripts\ckeditor\lang\hr.js" />
+    <Content Include="Scripts\ckeditor\lang\hu.js" />
+    <Content Include="Scripts\ckeditor\lang\id.js" />
+    <Content Include="Scripts\ckeditor\lang\is.js" />
+    <Content Include="Scripts\ckeditor\lang\it.js" />
+    <Content Include="Scripts\ckeditor\lang\ja.js" />
+    <Content Include="Scripts\ckeditor\lang\ka.js" />
+    <Content Include="Scripts\ckeditor\lang\km.js" />
+    <Content Include="Scripts\ckeditor\lang\ko.js" />
+    <Content Include="Scripts\ckeditor\lang\lt.js" />
+    <Content Include="Scripts\ckeditor\lang\lv.js" />
+    <Content Include="Scripts\ckeditor\lang\mk.js" />
+    <Content Include="Scripts\ckeditor\lang\mn.js" />
+    <Content Include="Scripts\ckeditor\lang\ms.js" />
+    <Content Include="Scripts\ckeditor\lang\nb.js" />
+    <Content Include="Scripts\ckeditor\lang\nl.js" />
+    <Content Include="Scripts\ckeditor\lang\no.js" />
+    <Content Include="Scripts\ckeditor\lang\pl.js" />
+    <Content Include="Scripts\ckeditor\lang\pt-br.js" />
+    <Content Include="Scripts\ckeditor\lang\pt.js" />
+    <Content Include="Scripts\ckeditor\lang\ro.js" />
+    <Content Include="Scripts\ckeditor\lang\ru.js" />
+    <Content Include="Scripts\ckeditor\lang\sk.js" />
+    <Content Include="Scripts\ckeditor\lang\sl.js" />
+    <Content Include="Scripts\ckeditor\lang\sr-latn.js" />
+    <Content Include="Scripts\ckeditor\lang\sr.js" />
+    <Content Include="Scripts\ckeditor\lang\sv.js" />
+    <Content Include="Scripts\ckeditor\lang\th.js" />
+    <Content Include="Scripts\ckeditor\lang\tr.js" />
+    <Content Include="Scripts\ckeditor\lang\ug.js" />
+    <Content Include="Scripts\ckeditor\lang\uk.js" />
+    <Content Include="Scripts\ckeditor\lang\vi.js" />
+    <Content Include="Scripts\ckeditor\lang\zh-cn.js" />
+    <Content Include="Scripts\ckeditor\lang\zh.js" />
+    <Content Include="Scripts\ckeditor\lang\_languages.js" />
+    <Content Include="Scripts\ckeditor\lang\_translationstatus.txt" />
+    <Content Include="Scripts\ckeditor\LICENSE.html" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\dialogs\a11yhelp.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\lang\cs.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\lang\cy.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\lang\da.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\lang\de.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\lang\el.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\lang\en.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\lang\eo.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\lang\fa.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\lang\fi.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\lang\fr.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\lang\gu.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\lang\he.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\lang\it.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\lang\mk.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\lang\nb.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\lang\nl.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\lang\no.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\lang\pt-br.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\lang\ro.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\lang\tr.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\lang\ug.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\lang\vi.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\lang\zh-cn.js" />
+    <Content Include="Scripts\ckeditor\plugins\a11yhelp\lang\_translationstatus.txt" />
+    <Content Include="Scripts\ckeditor\plugins\about\dialogs\about.js" />
+    <Content Include="Scripts\ckeditor\plugins\about\dialogs\logo_ckeditor.png" />
+    <Content Include="Scripts\ckeditor\plugins\adobeair\plugin.js" />
+    <Content Include="Scripts\ckeditor\plugins\ajax\plugin.js" />
+    <Content Include="Scripts\ckeditor\plugins\autogrow\plugin.js" />
+    <Content Include="Scripts\ckeditor\plugins\bbcode\plugin.js" />
+    <Content Include="Scripts\ckeditor\plugins\clipboard\dialogs\paste.js" />
+    <Content Include="Scripts\ckeditor\plugins\colordialog\dialogs\colordialog.js" />
+    <Content Include="Scripts\ckeditor\plugins\devtools\lang\bg.js" />
+    <Content Include="Scripts\ckeditor\plugins\devtools\lang\cs.js" />
+    <Content Include="Scripts\ckeditor\plugins\devtools\lang\cy.js" />
+    <Content Include="Scripts\ckeditor\plugins\devtools\lang\da.js" />
+    <Content Include="Scripts\ckeditor\plugins\devtools\lang\de.js" />
+    <Content Include="Scripts\ckeditor\plugins\devtools\lang\el.js" />
+    <Content Include="Scripts\ckeditor\plugins\devtools\lang\en.js" />
+    <Content Include="Scripts\ckeditor\plugins\devtools\lang\eo.js" />
+    <Content Include="Scripts\ckeditor\plugins\devtools\lang\et.js" />
+    <Content Include="Scripts\ckeditor\plugins\devtools\lang\fa.js" />
+    <Content Include="Scripts\ckeditor\plugins\devtools\lang\fi.js" />
+    <Content Include="Scripts\ckeditor\plugins\devtools\lang\fr.js" />
+    <Content Include="Scripts\ckeditor\plugins\devtools\lang\gu.js" />
+    <Content Include="Scripts\ckeditor\plugins\devtools\lang\he.js" />
+    <Content Include="Scripts\ckeditor\plugins\devtools\lang\hr.js" />
+    <Content Include="Scripts\ckeditor\plugins\devtools\lang\it.js" />
+    <Content Include="Scripts\ckeditor\plugins\devtools\lang\nb.js" />
+    <Content Include="Scripts\ckeditor\plugins\devtools\lang\nl.js" />
+    <Content Include="Scripts\ckeditor\plugins\devtools\lang\no.js" />
+    <Content Include="Scripts\ckeditor\plugins\devtools\lang\pl.js" />
+    <Content Include="Scripts\ckeditor\plugins\devtools\lang\pt-br.js" />
+    <Content Include="Scripts\ckeditor\plugins\devtools\lang\tr.js" />
+    <Content Include="Scripts\ckeditor\plugins\devtools\lang\ug.js" />
+    <Content Include="Scripts\ckeditor\plugins\devtools\lang\uk.js" />
+    <Content Include="Scripts\ckeditor\plugins\devtools\lang\vi.js" />
+    <Content Include="Scripts\ckeditor\plugins\devtools\lang\zh-cn.js" />
+    <Content Include="Scripts\ckeditor\plugins\devtools\lang\_translationstatus.txt" />
+    <Content Include="Scripts\ckeditor\plugins\devtools\plugin.js" />
+    <Content Include="Scripts\ckeditor\plugins\dialog\dialogDefinition.js" />
+    <Content Include="Scripts\ckeditor\plugins\div\dialogs\div.js" />
+    <Content Include="Scripts\ckeditor\plugins\docprops\dialogs\docprops.js" />
+    <Content Include="Scripts\ckeditor\plugins\docprops\plugin.js" />
+    <Content Include="Scripts\ckeditor\plugins\find\dialogs\find.js" />
+    <Content Include="Scripts\ckeditor\plugins\flash\dialogs\flash.js" />
+    <Content Include="Scripts\ckeditor\plugins\flash\images\placeholder.png" />
+    <Content Include="Scripts\ckeditor\plugins\forms\dialogs\button.js" />
+    <Content Include="Scripts\ckeditor\plugins\forms\dialogs\checkbox.js" />
+    <Content Include="Scripts\ckeditor\plugins\forms\dialogs\form.js" />
+    <Content Include="Scripts\ckeditor\plugins\forms\dialogs\hiddenfield.js" />
+    <Content Include="Scripts\ckeditor\plugins\forms\dialogs\radio.js" />
+    <Content Include="Scripts\ckeditor\plugins\forms\dialogs\select.js" />
+    <Content Include="Scripts\ckeditor\plugins\forms\dialogs\textarea.js" />
+    <Content Include="Scripts\ckeditor\plugins\forms\dialogs\textfield.js" />
+    <Content Include="Scripts\ckeditor\plugins\forms\images\hiddenfield.gif" />
+    <Content Include="Scripts\ckeditor\plugins\iframedialog\plugin.js" />
+    <Content Include="Scripts\ckeditor\plugins\iframe\dialogs\iframe.js" />
+    <Content Include="Scripts\ckeditor\plugins\iframe\images\placeholder.png" />
+    <Content Include="Scripts\ckeditor\plugins\image\dialogs\image.js" />
+    <Content Include="Scripts\ckeditor\plugins\link\dialogs\anchor.js" />
+    <Content Include="Scripts\ckeditor\plugins\link\dialogs\link.js" />
+    <Content Include="Scripts\ckeditor\plugins\link\images\anchor.gif" />
+    <Content Include="Scripts\ckeditor\plugins\liststyle\dialogs\liststyle.js" />
+    <Content Include="Scripts\ckeditor\plugins\pagebreak\images\pagebreak.gif" />
+    <Content Include="Scripts\ckeditor\plugins\pastefromword\filter\default.js" />
+    <Content Include="Scripts\ckeditor\plugins\pastetext\dialogs\pastetext.js" />
+    <Content Include="Scripts\ckeditor\plugins\placeholder\dialogs\placeholder.js" />
+    <Content Include="Scripts\ckeditor\plugins\placeholder\lang\bg.js" />
+    <Content Include="Scripts\ckeditor\plugins\placeholder\lang\cs.js" />
+    <Content Include="Scripts\ckeditor\plugins\placeholder\lang\cy.js" />
+    <Content Include="Scripts\ckeditor\plugins\placeholder\lang\da.js" />
+    <Content Include="Scripts\ckeditor\plugins\placeholder\lang\de.js" />
+    <Content Include="Scripts\ckeditor\plugins\placeholder\lang\el.js" />
+    <Content Include="Scripts\ckeditor\plugins\placeholder\lang\en.js" />
+    <Content Include="Scripts\ckeditor\plugins\placeholder\lang\eo.js" />
+    <Content Include="Scripts\ckeditor\plugins\placeholder\lang\et.js" />
+    <Content Include="Scripts\ckeditor\plugins\placeholder\lang\fa.js" />
+    <Content Include="Scripts\ckeditor\plugins\placeholder\lang\fi.js" />
+    <Content Include="Scripts\ckeditor\plugins\placeholder\lang\fr.js" />
+    <Content Include="Scripts\ckeditor\plugins\placeholder\lang\he.js" />
+    <Content Include="Scripts\ckeditor\plugins\placeholder\lang\hr.js" />
+    <Content Include="Scripts\ckeditor\plugins\placeholder\lang\it.js" />
+    <Content Include="Scripts\ckeditor\plugins\placeholder\lang\nb.js" />
+    <Content Include="Scripts\ckeditor\plugins\placeholder\lang\nl.js" />
+    <Content Include="Scripts\ckeditor\plugins\placeholder\lang\no.js" />
+    <Content Include="Scripts\ckeditor\plugins\placeholder\lang\pl.js" />
+    <Content Include="Scripts\ckeditor\plugins\placeholder\lang\pt-br.js" />
+    <Content Include="Scripts\ckeditor\plugins\placeholder\lang\tr.js" />
+    <Content Include="Scripts\ckeditor\plugins\placeholder\lang\ug.js" />
+    <Content Include="Scripts\ckeditor\plugins\placeholder\lang\uk.js" />
+    <Content Include="Scripts\ckeditor\plugins\placeholder\lang\vi.js" />
+    <Content Include="Scripts\ckeditor\plugins\placeholder\lang\zh-cn.js" />
+    <Content Include="Scripts\ckeditor\plugins\placeholder\lang\_translationstatus.txt" />
+    <Content Include="Scripts\ckeditor\plugins\placeholder\placeholder.gif" />
+    <Content Include="Scripts\ckeditor\plugins\placeholder\plugin.js" />
+    <Content Include="Scripts\ckeditor\plugins\preview\preview.html" />
+    <Content Include="Scripts\ckeditor\plugins\scayt\dialogs\options.js" />
+    <Content Include="Scripts\ckeditor\plugins\scayt\dialogs\toolbar.css" />
+    <Content Include="Scripts\ckeditor\plugins\showblocks\images\block_address.png" />
+    <Content Include="Scripts\ckeditor\plugins\showblocks\images\block_blockquote.png" />
+    <Content Include="Scripts\ckeditor\plugins\showblocks\images\block_div.png" />
+    <Content Include="Scripts\ckeditor\plugins\showblocks\images\block_h1.png" />
+    <Content Include="Scripts\ckeditor\plugins\showblocks\images\block_h2.png" />
+    <Content Include="Scripts\ckeditor\plugins\showblocks\images\block_h3.png" />
+    <Content Include="Scripts\ckeditor\plugins\showblocks\images\block_h4.png" />
+    <Content Include="Scripts\ckeditor\plugins\showblocks\images\block_h5.png" />
+    <Content Include="Scripts\ckeditor\plugins\showblocks\images\block_h6.png" />
+    <Content Include="Scripts\ckeditor\plugins\showblocks\images\block_p.png" />
+    <Content Include="Scripts\ckeditor\plugins\showblocks\images\block_pre.png" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\dialogs\smiley.js" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\angel_smile.gif" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\angry_smile.gif" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\broken_heart.gif" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\confused_smile.gif" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\cry_smile.gif" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\devil_smile.gif" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\embaressed_smile.gif" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\envelope.gif" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\heart.gif" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\kiss.gif" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\lightbulb.gif" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\omg_smile.gif" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\regular_smile.gif" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\sad_smile.gif" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\shades_smile.gif" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\teeth_smile.gif" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\thumbs_down.gif" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\thumbs_up.gif" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\tounge_smile.gif" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\whatchutalkingabout_smile.gif" />
+    <Content Include="Scripts\ckeditor\plugins\smiley\images\wink_smile.gif" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\dialogs\specialchar.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\lang\cs.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\lang\cy.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\lang\de.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\lang\el.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\lang\en.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\lang\eo.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\lang\et.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\lang\fa.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\lang\fi.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\lang\fr.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\lang\he.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\lang\hr.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\lang\it.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\lang\nb.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\lang\nl.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\lang\no.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\lang\pt-br.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\lang\tr.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\lang\ug.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\lang\zh-cn.js" />
+    <Content Include="Scripts\ckeditor\plugins\specialchar\lang\_translationstatus.txt" />
+    <Content Include="Scripts\ckeditor\plugins\stylesheetparser\plugin.js" />
+    <Content Include="Scripts\ckeditor\plugins\styles\styles\default.js" />
+    <Content Include="Scripts\ckeditor\plugins\tableresize\plugin.js" />
+    <Content Include="Scripts\ckeditor\plugins\tabletools\dialogs\tableCell.js" />
+    <Content Include="Scripts\ckeditor\plugins\table\dialogs\table.js" />
+    <Content Include="Scripts\ckeditor\plugins\templates\dialogs\templates.js" />
+    <Content Include="Scripts\ckeditor\plugins\templates\templates\default.js" />
+    <Content Include="Scripts\ckeditor\plugins\templates\templates\images\template1.gif" />
+    <Content Include="Scripts\ckeditor\plugins\templates\templates\images\template2.gif" />
+    <Content Include="Scripts\ckeditor\plugins\templates\templates\images\template3.gif" />
+    <Content Include="Scripts\ckeditor\plugins\uicolor\dialogs\uicolor.js" />
+    <Content Include="Scripts\ckeditor\plugins\uicolor\lang\bg.js" />
+    <Content Include="Scripts\ckeditor\plugins\uicolor\lang\cs.js" />
+    <Content Include="Scripts\ckeditor\plugins\uicolor\lang\cy.js" />
+    <Content Include="Scripts\ckeditor\plugins\uicolor\lang\da.js" />
+    <Content Include="Scripts\ckeditor\plugins\uicolor\lang\de.js" />
+    <Content Include="Scripts\ckeditor\plugins\uicolor\lang\el.js" />
+    <Content Include="Scripts\ckeditor\plugins\uicolor\lang\en.js" />
+    <Content Include="Scripts\ckeditor\plugins\uicolor\lang\eo.js" />
+    <Content Include="Scripts\ckeditor\plugins\uicolor\lang\et.js" />
+    <Content Include="Scripts\ckeditor\plugins\uicolor\lang\fa.js" />
+    <Content Include="Scripts\ckeditor\plugins\uicolor\lang\fi.js" />
+    <Content Include="Scripts\ckeditor\plugins\uicolor\lang\fr.js" />
+    <Content Include="Scripts\ckeditor\plugins\uicolor\lang\he.js" />
+    <Content Include="Scripts\ckeditor\plugins\uicolor\lang\hr.js" />
+    <Content Include="Scripts\ckeditor\plugins\uicolor\lang\it.js" />
+    <Content Include="Scripts\ckeditor\plugins\uicolor\lang\mk.js" />
+    <Content Include="Scripts\ckeditor\plugins\uicolor\lang\nb.js" />
+    <Content Include="Scripts\ckeditor\plugins\uicolor\lang\nl.js" />
+    <Content Include="Scripts\ckeditor\plugins\uicolor\lang\no.js" />
+    <Content Include="Scripts\ckeditor\plugins\uicolor\lang\pl.js" />
+    <Content Include="Scripts\ckeditor\plugins\uicolor\lang\pt-br.js" />
+    <Content Include="Scripts\ckeditor\plugins\uicolor\lang\tr.js" />
+    <Content Include="Scripts\ckeditor\plugins\uicolor\lang\ug.js" />
+    <Content Include="Scripts\ckeditor\plugins\uicolor\lang\uk.js" />
+    <Content Include="Scripts\ckeditor\plugins\uicolor\lang\vi.js" />
+    <Content Include="Scripts\ckeditor\plugins\uicolor\lang\zh-cn.js" />
+    <Content Include="Scripts\ckeditor\plugins\uicolor\lang\_translationstatus.txt" />
+    <Content Include="Scripts\ckeditor\plugins\uicolor\plugin.js" />
+    <Content Include="Scripts\ckeditor\plugins\uicolor\uicolor.gif" />
+    <Content Include="Scripts\ckeditor\plugins\uicolor\yui\assets\hue_bg.png" />
+    <Content Include="Scripts\ckeditor\plugins\uicolor\yui\assets\hue_thumb.png" />
+    <Content Include="Scripts\ckeditor\plugins\uicolor\yui\assets\picker_mask.png" />
+    <Content Include="Scripts\ckeditor\plugins\uicolor\yui\assets\picker_thumb.png" />
+    <Content Include="Scripts\ckeditor\plugins\uicolor\yui\assets\yui.css" />
+    <Content Include="Scripts\ckeditor\plugins\uicolor\yui\yui.js" />
+    <Content Include="Scripts\ckeditor\plugins\wsc\dialogs\ciframe.html" />
+    <Content Include="Scripts\ckeditor\plugins\wsc\dialogs\tmpFrameset.html" />
+    <Content Include="Scripts\ckeditor\plugins\wsc\dialogs\wsc.css" />
+    <Content Include="Scripts\ckeditor\plugins\wsc\dialogs\wsc.js" />
+    <Content Include="Scripts\ckeditor\plugins\xml\plugin.js" />
+    <Content Include="Scripts\ckeditor\skins\kama\dialog.css" />
+    <Content Include="Scripts\ckeditor\skins\kama\editor.css" />
+    <Content Include="Scripts\ckeditor\skins\kama\icons.png" />
+    <Content Include="Scripts\ckeditor\skins\kama\icons_rtl.png" />
+    <Content Include="Scripts\ckeditor\skins\kama\images\dialog_sides.gif" />
+    <Content Include="Scripts\ckeditor\skins\kama\images\dialog_sides.png" />
+    <Content Include="Scripts\ckeditor\skins\kama\images\dialog_sides_rtl.png" />
+    <Content Include="Scripts\ckeditor\skins\kama\images\mini.gif" />
+    <Content Include="Scripts\ckeditor\skins\kama\images\noimage.png" />
+    <Content Include="Scripts\ckeditor\skins\kama\images\sprites.png" />
+    <Content Include="Scripts\ckeditor\skins\kama\images\sprites_ie6.png" />
+    <Content Include="Scripts\ckeditor\skins\kama\images\toolbar_start.gif" />
+    <Content Include="Scripts\ckeditor\skins\kama\skin.js" />
+    <Content Include="Scripts\ckeditor\skins\kama\templates.css" />
+    <Content Include="Scripts\ckeditor\skins\office2003\dialog.css" />
+    <Content Include="Scripts\ckeditor\skins\office2003\editor.css" />
+    <Content Include="Scripts\ckeditor\skins\office2003\icons.png" />
+    <Content Include="Scripts\ckeditor\skins\office2003\icons_rtl.png" />
+    <Content Include="Scripts\ckeditor\skins\office2003\images\dialog_sides.gif" />
+    <Content Include="Scripts\ckeditor\skins\office2003\images\dialog_sides.png" />
+    <Content Include="Scripts\ckeditor\skins\office2003\images\dialog_sides_rtl.png" />
+    <Content Include="Scripts\ckeditor\skins\office2003\images\mini.gif" />
+    <Content Include="Scripts\ckeditor\skins\office2003\images\noimage.png" />
+    <Content Include="Scripts\ckeditor\skins\office2003\images\sprites.png" />
+    <Content Include="Scripts\ckeditor\skins\office2003\images\sprites_ie6.png" />
+    <Content Include="Scripts\ckeditor\skins\office2003\skin.js" />
+    <Content Include="Scripts\ckeditor\skins\office2003\templates.css" />
+    <Content Include="Scripts\ckeditor\skins\v2\dialog.css" />
+    <Content Include="Scripts\ckeditor\skins\v2\editor.css" />
+    <Content Include="Scripts\ckeditor\skins\v2\icons.png" />
+    <Content Include="Scripts\ckeditor\skins\v2\icons_rtl.png" />
+    <Content Include="Scripts\ckeditor\skins\v2\images\dialog_sides.gif" />
+    <Content Include="Scripts\ckeditor\skins\v2\images\dialog_sides.png" />
+    <Content Include="Scripts\ckeditor\skins\v2\images\dialog_sides_rtl.png" />
+    <Content Include="Scripts\ckeditor\skins\v2\images\mini.gif" />
+    <Content Include="Scripts\ckeditor\skins\v2\images\noimage.png" />
+    <Content Include="Scripts\ckeditor\skins\v2\images\sprites.png" />
+    <Content Include="Scripts\ckeditor\skins\v2\images\sprites_ie6.png" />
+    <Content Include="Scripts\ckeditor\skins\v2\images\toolbar_start.gif" />
+    <Content Include="Scripts\ckeditor\skins\v2\skin.js" />
+    <Content Include="Scripts\ckeditor\skins\v2\templates.css" />
+    <Content Include="Scripts\ckeditor\themes\default\theme.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\ProductCategories\Create.cshtml" />
+    <Content Include="Views\ProductCategories\Delete.cshtml" />
+    <Content Include="Views\ProductCategories\Details.cshtml" />
+    <Content Include="Views\ProductCategories\Edit.cshtml" />
+    <Content Include="Views\ProductCategories\Index.cshtml" />
+    <Content Include="Views\Shared\Category.cshtml" />
+    <Content Include="Views\Products\Index.cshtml" />
+    <Content Include="Views\Products\Details.cshtml" />
+    <Content Include="Views\Products\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="UploadFiles\" />
+    <Folder Include="Views\Imge\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201912041655262_initial.resx">
+      <DependentUpon>201912041655262_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912051514115_product.resx">
+      <DependentUpon>201912051514115_product.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912141658058_addimage.resx">
+      <DependentUpon>201912141658058_addimage.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>51841</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:51841/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

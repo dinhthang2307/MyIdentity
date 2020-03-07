@@ -39,7 +39,6 @@
                 @Html.DisplayFor(modelItem => item.Price)
             </td>
             <td>
-
                 @Html.DisplayFor(modelItem => item.Image)
             </td>
             <td>
@@ -49,23 +48,4 @@
             </td>
         </tr>
     }
-
 </table>
-<div class="jumbotron">
-<textarea class="ckeditor" name="editor"></textarea>
-</div>
-<script src="~/Scripts/ckeditor/ckeditor.js"></script>
-
-<script type="text/javascript">
-
-    function chooseImage() {
-        var finder = new CKFinder();
-        finder.selectActionFunction = function (fileUrl) {
-            $scope.$apply(function () {
-                $scope.moreImages.push(fileUrl);
-            })
-
-        }
-        finder.popup();
-    }
-</script>

@@ -20,5 +20,9 @@ namespace identity.Models
         [DataType(DataType.Upload)]
         [Display(Name = "Hình ảnh")]
         public string Image { get; set; }
+
+        [DataType(DataType.Upload)]
+        [Display(Name = "Hình ảnh")]
+        public string ByteImage { get; set; }
     }
 }
